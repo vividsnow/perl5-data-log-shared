@@ -48,4 +48,5 @@ xt/persistence_roundtrip.t
 xt/stress.t
 xt/timeout_validation.t
 xt/truncate_while_open.t
+xt/tsan.t
 xt/valgrind.t
