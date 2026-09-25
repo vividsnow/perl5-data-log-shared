@@ -1,5 +1,14 @@
 Revision history for Data::Log::Shared
 
+0.08  2026-09-26
+    - Creating a segment reserves its space, so a full filesystem makes the
+      constructor croak instead of dying with SIGBUS; DATA_LOG_SHARED_SPARSE=1
+      skips the reservation.
+    - A create that fails at mmap no longer leaves a full-size file behind.
+    - Checking a file left by an interrupted create no longer allocates its
+      pages on tmpfs.
+    - Error messages no longer lose their reason to a long path.
+
 0.07  2026-08-12
     - Recover a file left behind by an interrupted create instead of leaving the
       path unopenable.
